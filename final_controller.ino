@@ -82,11 +82,7 @@ void loop()
     client.connect(addr, PORT);
     if (client.connected())
     {
-      Serial.println("Connected to the server.");
-
-      // Send something to the client
-      client.println("Hello Server!");
-      
+      Serial.println("Connected to the server.");      
       // Remember that there is a connection
       Connected = true;
     }
@@ -125,7 +121,7 @@ void loop()
       doc["Y"] = yVal;
       //doc["B"]= buttonVal;
       serializeJson(doc, Serial);
-      Serial.print("");
+  
       serializeJson(doc, client);
 
       //JsonArray pressButton = doc.createNestedArray("B");
@@ -138,12 +134,12 @@ void loop()
       //delay(1000);
       
       // Read all incoming bytes available from the server and print them
-      while (client.available())
-      {
-        char c = client.read();
-        Serial.print(c);
-      }
-      Serial.flush();
+      //while (client.available())
+      //{
+        //char c = client.read();
+        //Serial.print(c);
+      //}
+      //Serial.flush();
     }
     else
     {
