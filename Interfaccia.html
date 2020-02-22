@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfaccia Web</title>
+    <link href="Style.css" rel="stylesheet" type="text/css">
+    <script src="Configurazioni.js"></script>
+</head>
+<body>
+<div class="header">
+    <h1>Web Interface</h1>
+    <p>Press this button if you want to connect</p>
+    <button class="btn" onclick="connect()"><span>Connect</span></button>
+</div>
+<div class="tab">
+    <button class="tablinks" onmouseover="openMode(event, 'EasyMode')">Easy Mode</button>
+    <button class="tablinks" onmouseover="openMode(event, 'NormalMode')">Normal Mode</button>
+    <button class="tablinks" onmouseover="openMode(event, 'HardMode')">Hard Mode</button>
+</div>
+
+<div id="EasyMode" class="tabcontent">
+    <h3>Easy Mode</h3>
+    <p>Modalità più semplice, i comnadi sono straight.</p>
+    <button class="button" onclick="send1()">Try Out</button>
+</div>
+
+<div id="NormalMode" class="tabcontent">
+    <h3>Normal Mode</h3>
+    <p>Modalità normale, i comandi non sono facilitati.</p>
+    <button class="button" onclick="send2()">Try Out</button>
+</div>
+
+<div id="HardMode" class="tabcontent">
+    <h3>Hard Mode</h3>
+    <p>Modalità più difficle, i comandi avanti e indietro sono invertiti.</p>
+    <button class="button" onclick="send3()">Try Out</button>
+</div>
+
+<div class="clearfix"></div>
+
+<script>
+    function openMode(evt, Mode) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(Mode).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+<!--<div class="navbar">
+    <a href="#">Easy Mode</a>
+    <a href="#">Normal Mode</a>
+    <a href="#">Hard Mode</a>
+</div>-->
+</body>
