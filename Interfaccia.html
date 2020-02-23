@@ -9,8 +9,6 @@
 <body>
 <div class="header">
     <h1>Web Interface</h1>
-    <p>Press this button if you want to connect</p>
-    <button class="btn" onclick="connect()"><span>Connect</span></button>
 </div>
 <div class="tab">
     <button class="tablinks" onmouseover="openMode(event, 'EasyMode')">Drive Mode</button>
@@ -21,38 +19,26 @@
 <div id="EasyMode" class="tabcontent">
     <h3>Drive Mode</h3>
     <p>Easier mode. Controls are plain and simple.</p>
-    <button class="button" onclick="driveMode()">Try Out</button>
+    <button class="button" onclick="driveModeCar()">Car Mode</button>
+    <button class="button" onclick="driveModeSteam()">Steam Mode</button>
 </div>
 
 <div id="NormalMode" class="tabcontent">
     <h3>Cooking Mode</h3>
     <p>Tougher mode. Controls are not as easy as they look.</p>
-    <button class="button" onclick="cookingMode()">Try Out</button>
+    <button class="button" onclick="cookingModeCar()">Car Mode</button>
+    <button class="button" onclick="cookingModeSteam()">Steam Mode</button>
 </div>
 
 <div id="HardMode" class="tabcontent">
     <h3>Reverse Drive Mode</h3>
     <p>Hardcore mode. Good luck.</p>
-    <button class="button" onclick="reverseDriveMode()">Try Out</button>
+    <button class="button" onclick="reverseDriveModeCar()">Car Mode</button>
+    <button class="button" onclick="reverseDriveModeSteam()">Steam Mode</button>
 </div>
 
 <div class="clearfix"></div>
 
-<script>
-    function openMode(evt, Mode) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(Mode).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-</script>
 <!--<div class="navbar">
     <a href="#">Easy Mode</a>
     <a href="#">Normal Mode</a>
