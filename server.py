@@ -48,8 +48,6 @@ drive=mode("410","280","510","690", "a", "i", "s", "d")
 rdrive=mode("340","270","510","690", "i", "a", "d", "s")
 cook=mode("670","440","500","690", "d", "s", "a", "i")
 
-
-
 class connessioni:
     def __init__(self, addr, conn, mod):
         self.address=addr
@@ -63,12 +61,12 @@ port_interface = 256
 lista_connessi = [] #lista connessi
 connected = 2  #numero di connessioni accettate
 
+#creazione socket
 s=socket.socket()
 s.bind((host, port))
 s.listen()
+
 stringa=""
-
-
 waiter=0 #iteratore
 piattaforma=""
 
@@ -140,24 +138,24 @@ while True:  #while generale
             if(comandoX=="direzione1"):
                  print(modalita.d1)
                  if(piattaforma=="steam"):
-                    key_press.press(modalita.d1)
+                    key_press.Press(modalita.d1)
                  if(piattaforma=="macchina"):
                     macchina.send(str.encode(modalita.d1))
             if (comandoX == "direzione2"):
                 print(modalita.d2)
                 if (piattaforma == "steam"):
-                    key_press.press(modalita.d2)
+                    key_press.Press(modalita.d2)
                 if (piattaforma == "macchina"):
                     macchina.send(str.encode(modalita.d2))
             if (comandoY == "direzione3"):
                 print(modalita.d3)
                 if (piattaforma == "steam"):
-                    key_press.press(modalita.d3)
+                    key_press.Press(modalita.d3)
                 if (piattaforma == "macchina"):
                     macchina.send(str.encode(modalita.d3))
             if (comandoY == "direzione4"):
                 print(modalita.d4)
                 if (piattaforma == "steam"):
-                    key_press.press(modalita.d4)
+                    key_press.Press(modalita.d4)
                 if (piattaforma == "macchina"):
                     macchina.send(str.encode(modalita.d4))
