@@ -3,12 +3,8 @@ var IP= 'ws://192.168.43.209:';
 var url = IP + port.toString();
 const MySocket = new WebSocket(url);//alternative socket 'ws://172.18.82.53:255'
 
-
-
-
 function driveModeCar() {
-    //const socket = new WebSocket('ws://192.168.43.201:255', ["protocolOne", "protocolTwo"]);
-    //const MySocket = new WebSocket('ws://192.168.43.209:256');//+ port.toString());
+
     var msg = {
         M:"1"
     };
@@ -21,8 +17,7 @@ function driveModeCar() {
 }
 
 function driveModeSteam() {
-    //const socket = new WebSocket('ws://192.168.43.201:255', ["protocolOne", "protocolTwo"]);
-    //const MySocket = new WebSocket('ws://192.168.43.209:256');//+ port.toString());
+
     var msg = {
         M:"2"
     };
@@ -35,6 +30,7 @@ function driveModeSteam() {
 }
 
 function cookingModeCar(){
+
     var msg = {
         M: "3"
     };
@@ -45,6 +41,7 @@ function cookingModeCar(){
 }
 
 function cookingModeSteam(){
+
     var msg = {
         M: "4"
     };
@@ -55,6 +52,7 @@ function cookingModeSteam(){
 }
 
 function reverseDriveModeCar(){
+
     var msg = {
         M: "5"
     };
@@ -65,6 +63,7 @@ function reverseDriveModeCar(){
 }
 
 function reverseDriveModeSteam(){
+
     var msg = {
         M: "6"
     };
